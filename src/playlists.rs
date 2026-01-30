@@ -223,10 +223,10 @@ impl App {
         // color of the titles ("Playlists" and "Tracks" text in the borders)
         let [playlists_title_color, tracks_title_color] = match self.state.active_section {
             ActiveSection::List => {
-                [self.theme.primary_color, self.theme.resolve(&self.theme.section_title)]
+                [self.theme.resolve(&self.theme.border_focused), self.theme.resolve(&self.theme.section_title)]
             }
             ActiveSection::Tracks => {
-                [self.theme.resolve(&self.theme.section_title), self.theme.primary_color]
+                [self.theme.resolve(&self.theme.section_title), self.theme.resolve(&self.theme.border_focused)]
             }
             _ => [
                 self.theme.resolve(&self.theme.section_title),
